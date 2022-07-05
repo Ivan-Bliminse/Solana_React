@@ -23,8 +23,6 @@ function App() {
     const Card1 = (cardOne.offsetTop + cardOne.offsetHeight / 3.5) < scrolled
     const Card1Finish = (cardOne.offsetTop + cardOne.offsetHeight) > window.scrollY
 
-    console.log(Card1, Card1Finish)
-
     if (scaleImgTrue && scaleImgFinish) {
       scaleImg.classList.add('active')
     } else {
@@ -40,9 +38,8 @@ function App() {
     }
 
   }
-
-
   window.addEventListener('scroll', scroll)
+
 
   return (
     <div>
