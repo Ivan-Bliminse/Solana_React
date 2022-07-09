@@ -1,0 +1,67 @@
+/* ================== Grid  =======================*/
+.gridContainer {
+  color: black;
+  display: grid;
+  width: 70vw;
+  height: auto;
+  margin: auto;
+  grid-template-areas:
+    "pinkGrid greenGrid"
+    "cyanGrid cyanGrid";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 2vh;
+  column-gap: 2vw;
+  margin-bottom: 50vh;
+}
+
+.gridContainer__Grid_pink {
+  font-size: 20px;
+  grid-area: pinkGrid;
+  background-color: rgb(235, 84, 188);
+  padding: 20px;
+  border-radius: 2vh;
+}
+
+.gridContainer__Grid_green {
+  font-size: 20px;
+  grid-area: greenGrid;
+  background-color: rgb(20, 241, 149);
+  padding: 20px;
+  border-radius: 20px;
+}
+.gridContainer__Grid_cyan {
+  font-size: 20px;
+  grid-area: cyanGrid;
+  background-color: rgb(128, 236, 255);
+  box-shadow: 0 40px 80px 0 rgba(128, 236, 255, 0.8);
+  padding: 20px;
+  display: flex;
+  border-radius: 20px;
+}
+
+.gridContainer__Grid_cyan h2 {
+  margin-left: 30px;
+  margin-right: 50px;
+  width: 30vw;
+  font-size: 50px;
+}
+
+.gridContainer__text {
+  width: 30vw;
+  font-size: 20px;
+  margin-right: 40px;
+}
+
+.cyanGrid {
+  margin-bottom: 20vh;
+}
+.gridContainer button {
+  font-size: 1em;
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}

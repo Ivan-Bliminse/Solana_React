@@ -1,0 +1,52 @@
+/* ======================= Double Block ======================= */
+
+.container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.container__blockOne {
+  width: 45vw;
+  display: flex;
+  justify-content: flex-end;
+}
+.container__header {
+  width: 60%;
+  font-size: 40px;
+}
+
+.container__blockTwo {
+  width: 45vw;
+  display: flex;
+}
+
+.container__descriptionBlock {
+  width: 60%;
+  font-size: 20px;
+}
+
+.container__description {
+  margin-top: 5vh;
+}
+
+.container__button_purple {
+  font-size: 15px;
+  margin-top: 20px;
+  background-color: rgb(153, 69, 255);
+  border-radius: 1.5vw;
+  padding: 0.8vw;
+  color: white;
+  border: 1px solid black;
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1600px) {
+  .container__header h2 {
+    font-size: 40px;
+  }
+  .container__descriptionBlock {
+    width: 80%;
+    font-size: 13.5px;
+  }
+}

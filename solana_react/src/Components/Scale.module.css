@@ -1,0 +1,47 @@
+/* =============== Scale Block ==================== */
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10vh;
+}
+
+.container__textArea {
+  display: flex;
+  justify-content: center;
+}
+.container__text {
+  width: 50vw;
+}
+
+.container__text h2 {
+  font-size: 60px;
+  margin: 0;
+}
+.container__text h3 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.container__description {
+  font-size: 21.5px;
+}
+
+.container__imageContainer img {
+  width: 100%;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1600px) {
+  .container__text h2 {
+    font-size: 40px;
+  }
+  .container__text h3 {
+    font-size: 20px;
+  }
+  .container__description {
+    font-size: 13.5px;
+  }
+}

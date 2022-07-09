@@ -1,0 +1,31 @@
+.box {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgb(20, 241, 149);
+  display: flex;
+  height: 10vh;
+  font-family: Poppins;
+  color: black;
+  width: 100vw;
+  flex-wrap: wrap;
+}
+.box__elements {
+  display: flex;
+  width: 100vw;
+  border: 1px solid black;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  flex-basis: 25%;
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1400px) {
+  .box {
+    font-size: 15px;
+  }
+  .box_elements {
+    flex-basis: 50%;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}

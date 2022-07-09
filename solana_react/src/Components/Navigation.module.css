@@ -1,0 +1,45 @@
+.navBar {
+  display: flex;
+  height: 10vh;
+  width: 100vw;
+  background-color: black;
+  align-items: flex-end;
+}
+
+.navBar__logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.navBar__logo img {
+  width: 200px;
+}
+
+.navBar__links {
+  flex: 1.5;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.navBar__links a {
+  flex-basis: auto;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1600px) {
+  .navBar__logo img {
+    width: 165px;
+  }
+
+  .navBar__links {
+    flex: 2;
+  }
+  .navBar__links a {
+    font-size: 18px;
+  }
+}

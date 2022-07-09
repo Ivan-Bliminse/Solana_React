@@ -1,49 +1,57 @@
-import { useEffect } from 'react';
-import Cards from './Components/Cards';
-import ContainerGreen from './Components/ContainerGreen';
-import Decentralized from './Components/Decentralized';
-import DoubleBlock from './Components/DoubleBlock';
-import Grid from './Components/Grid';
-import Head from './Components/Head';
-import Navigation from './Components/Navigation';
-import Scale from './Components/Scale';
+import { useEffect } from "react";
+import Cards from "./Components/Cards";
+import ContainerGreen from "./Components/ContainerGreen";
+import Decentralized from "./Components/Decentralized";
+import DoubleBlock from "./Components/DoubleBlock";
+import Grid from "./Components/Grid";
+import Head from "./Components/Head";
+import Navigation from "./Components/Navigation";
+import Scale from "./Components/Scale";
 
 function App() {
-
   useEffect(() => {
-    const scaleImg = document.querySelector('.scaleImage')
-    const cardOne = document.querySelector('.cardOne')
-    const cardTwo = document.querySelector('.cardTwo')
+    const scaleImg = document.querySelector(".scaleImage");
+    const cardOne = document.getElementById("cardOne");
+    const cardTwo = document.getElementById("cardTwo");
+
+    function fullHeight(el) {
+      return el.offsetTop + el.offsetHeight;
+    }
+
+    function twoThirdsOfHeight(el) {
+      return (el.offsetHeight / 3) * 2;
+    }
 
     function scroll() {
-      const scrolled = window.scrollY + window.innerHeight
+      const Y = window.scrollY + window.innerHeight;
       // Scale Image
-      const scaleImgTrue = (scaleImg.offsetTop + scaleImg.offsetHeight / 3) < scrolled
-      const scaleImgFinish = (scaleImg.offsetTop + scaleImg.offsetHeight) > window.scrollY
+      const isScaleImgTwoThirds =
+        fullHeight(scaleImg) - twoThirdsOfHeight(scaleImg) < Y;
+      const isScaleImgScrolledPast =
+        scaleImg.offsetTop + scaleImg.offsetHeight > window.scrollY;
 
       // Cards One and Two
-      const Card1 = (cardOne.offsetTop + cardOne.offsetHeight / 3.5) < scrolled
-      const Card1Finish = (cardOne.offsetTop + cardOne.offsetHeight) > window.scrollY
+      const isCardOneTwoThirds =
+        fullHeight(cardOne) - twoThirdsOfHeight(cardOne) < Y;
+      console.log(isCardOneTwoThirds);
+      const isCardOneScrolledPast = fullHeight(cardOne) > window.scrollY;
 
-      if (scaleImgTrue && scaleImgFinish) {
-        scaleImg.classList.add('active')
-      } else {
-        scaleImg.classList.remove('active')
-      }
+      scaleImg.classList.toggle(
+        "active",
+        isScaleImgTwoThirds && isScaleImgScrolledPast
+      );
 
-      if (Card1 && Card1Finish) {
-        cardOne.classList.add('activeRight')
-        cardTwo.classList.add('activeLeft')
-      } else {
-        cardOne.classList.remove('activeRight')
-        cardTwo.classList.remove('activeLeft')
-      }
-
+      cardOne.classList.toggle(
+        "activeRight",
+        isCardOneTwoThirds && isCardOneScrolledPast
+      );
+      cardTwo.classList.toggle(
+        "activeLeft",
+        isCardOneTwoThirds && isCardOneScrolledPast
+      );
     }
-    window.addEventListener('scroll', scroll)
-
-  }, [])
-
+    window.addEventListener("scroll", scroll);
+  }, []);
 
   return (
     <div>
